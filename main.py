@@ -52,7 +52,7 @@ def main():
     args = parser.parse_args()
     filename = args.filename
     image = np.asarray(Image.open(filename), dtype='f8') / 255.0
-    w, h = (np.array(image.shape[:2]) * args.scl).astype(int)
+    h, w = (np.array(image.shape[:2]) * args.scl).astype(int)
     xx, yy = np.meshgrid(np.arange(w), np.arange(h))
     xx = (xx + 0.5) / w * image.shape[1]
     yy = (yy + 0.5) / h * image.shape[0]
